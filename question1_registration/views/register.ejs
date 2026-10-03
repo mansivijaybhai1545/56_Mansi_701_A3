@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>User Registration</title><link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="container">
+<h1>User Registration</h1>
+
+<% if(uploadError){ %><div class="error-box"><%= uploadError %></div><% } %>
+<% if(errors.length){ %>
+<div class="error-box"><strong>Please correct the following errors:</strong><ul>
+<% errors.forEach(e=>{ %><li><%= e.msg %></li><% }) %>
+</ul></div>
+<% } %>
+
+<form action="/register" method="POST" enctype="multipart/form-data">
+
+<div class="form-group"><label>Username</label>
+<input type="text" name="username" value="<%= oldData.username||'' %>" placeholder="Enter username"></div>
+
+<div class="form-group"><label>Password</label>
+<input type="password" name="password" placeholder="Enter password"></div>
+
+<div class="form-group"><label>Confirm Password</label>
+<input type="password" name="confirmPassword" placeholder="Confirm password"></div>
+
+<div class="form-group"><label>Email</label>
+<input type="email" name="email" value="<%= oldData.email||'' %>" placeholder="Enter email"></div>
+
+<div class="form-group"><label>Gender</label><div class="checkbox-group">
+<% ["Male","Female","Other"].forEach(g=>{ %>
+<label><input type="radio" name="gender" value="<%= g %>" <%= oldData.gender===g?"checked":"" %>><%= g %></label>
+<% }) %>
+</div></div>
+
+<div class="form-group"><label>Hobbies</label><div class="checkbox-group">
+<% ["Reading","Sports","Music","Travel"].forEach(h=>{ %>
+<label><input type="checkbox" name="hobbies" value="<%= h %>" <%= Array.isArray(oldData.hobbies)&&oldData.hobbies.includes(h)?"checked":"" %>><%= h %></label>
+<% }) %>
+</div></div>
+
+<div class="form-group"><label>Profile Picture</label>
+<input type="file" name="profilePic" accept="image/jpeg,image/jpg,image/png,image/gif">
+<small>Only JPG, JPEG, PNG and GIF. Maximum 2 MB.</small></div>
+
+<div class="form-group"><label>Other Pictures</label>
+<input type="file" name="otherPics" accept="image/jpeg,image/jpg,image/png,image/gif" multiple>
+<small>Maximum 5 images, 2 MB per image.</small></div>
+
+<button type="submit">Register</button>
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Registration Result</title><link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="container">
+<h1>Registration Successful</h1>
+
+<table>
+<tr><th>Field</th><th>Value</th></tr>
+<tr><td>Username</td><td><%= userData.username %></td></tr>
+<tr><td>Password</td><td><%= userData.password %></td></tr>
+<tr><td>Email</td><td><%= userData.email %></td></tr>
+<tr><td>Gender</td><td><%= userData.gender %></td></tr>
+
+<tr><td>Hobbies</td><td>
+<%= userData.hobbies.length ? userData.hobbies.join(", ") : "No hobbies selected." %>
+</td></tr>
+
+<tr><td>Profile Picture</td><td>
+<% if(userData.profilePic){ %>
+<img src="<%= userData.profilePic.path %>" class="profile-image" alt="Profile Picture"><br>
+<span><%= userData.profilePic.originalName %></span><br><br>
+<a href="/download/profile/<%= userData.profilePic.filename %>" class="download-btn">Download Profile Picture</a>
+<% }else{ %>No profile picture uploaded.<% } %>
+</td></tr>
+
+<tr><td>Other Pictures</td><td>
+<% if(userData.otherPics.length){ %>
+<div class="image-container">
+<% userData.otherPics.forEach(pic=>{ %>
+<div class="image-card">
+<img src="<%= pic.path %>" class="other-image" alt="Uploaded Image">
+<p><%= pic.originalName %></p>
+<a href="/download/others/<%= pic.filename %>" class="download-btn">Download</a>
+</div>
+<% }) %>
+</div>
+<% }else{ %>No other pictures uploaded.<% } %>
+</td></tr>
+</table>
+
+<br><a href="/" class="back-btn">Register Another User</a>
+</div>
+
+</body>
+</html>

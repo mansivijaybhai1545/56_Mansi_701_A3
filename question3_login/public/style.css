@@ -1,0 +1,5 @@
+body{font-family:Arial;background:#eee;text-align:center;padding:60px}
+.box{background:white;padding:25px;margin:auto;max-width:300px;border-radius:10px}
+input,button{display:block;width:100%;box-sizing:border-box;padding:10px;margin:10px 0}
+button{background:#2563eb;color:white;border:0;cursor:pointer}
+a{color:#2563eb}

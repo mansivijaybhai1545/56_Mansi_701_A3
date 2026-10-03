@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><link rel="stylesheet" href="/style.css"><body>
+<h2>ERP Employee Management</h2><a href="/logout">Logout</a>
+
+<div class="box"><h3>Add Employee</h3>
+<form method="post" action="/add">
+<input name="name" placeholder="Name" required>
+<input name="email" type="email" placeholder="Email" required>
+<input name="department" placeholder="Department" required>
+<input name="basic" type="number" placeholder="Basic Salary" required>
+<input name="hra" type="number" placeholder="HRA" required>
+<input name="da" type="number" placeholder="DA" required>
+<input name="deduction" type="number" placeholder="Deduction" required>
+<button>Add Employee</button>
+</form></div>
+
+<table><tr><th>ID</th><th>Name</th><th>Email</th><th>Department</th><th>Salary</th><th>Action</th></tr>
+<% emps.forEach(e=>{ %>
+<tr><td><%=e.empid%></td><td><%=e.name%></td><td><%=e.email%></td><td><%=e.department%></td><td><%=e.salary%></td>
+<td><a href="/delete/<%=e._id%>">Delete</a></td></tr>
+<% }) %></table>
+</body></html>

@@ -1,0 +1,38 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f6f9;color:#333}
+.container{width:90%;max-width:900px;margin:50px auto}
+.login-container{max-width:450px;background:white;padding:35px;border-radius:10px;box-shadow:0 5px 20px #0002}
+h1{margin-top:0;color:#222}.subtitle{color:#777;margin-bottom:25px}
+
+.form-group{margin-bottom:20px}.form-group label{display:block;margin-bottom:8px;font-weight:bold}
+.form-group input{width:100%;padding:12px;border:1px solid #ccc;border-radius:6px;font-size:15px}
+.form-group input:focus{outline:none;border-color:#007bff;box-shadow:0 0 0 2px #007bff1a}
+
+.btn{display:inline-block;padding:12px 20px;background:#007bff;color:white;text-decoration:none;border:0;border-radius:6px;cursor:pointer;font-size:15px}
+.btn:hover{background:#0056b3}button.btn{width:100%}
+
+.error-box{background:#ffe5e5;color:#c62828;border:1px solid #ef9a9a;padding:12px 15px;border-radius:6px;margin-bottom:20px}
+.demo-box{margin-top:25px;padding:15px;background:#f1f7ff;border:1px solid #cfe2ff;border-radius:6px}
+.demo-box h3{margin-top:0;color:#0056b3}.demo-box p{margin:8px 0}
+
+.navbar{background:#222;color:white;padding:15px 5%;display:flex;justify-content:space-between;align-items:center}
+.nav-brand{font-size:20px;font-weight:bold}.nav-links{display:flex;gap:20px}
+.nav-links a{color:white;text-decoration:none;padding:7px 10px;border-radius:4px}
+.nav-links a:hover{background:#444}.logout-link{background:#dc3545}
+.logout-link:hover{background:#b02a37!important}
+
+.welcome-card,.info-card,.profile-card{background:white;padding:30px;margin-bottom:20px;border-radius:10px;box-shadow:0 3px 15px #00000014}
+.welcome-card{border-left:5px solid #007bff}.info-card h2{margin-top:0}
+
+.profile-row{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid #eee}
+.profile-row:last-of-type{border-bottom:none}
+.actions{display:flex;gap:15px;margin-top:25px;flex-wrap:wrap}
+.logout-btn{background:#dc3545}.logout-btn:hover{background:#b02a37}
+
+.error-page{text-align:center;background:white;padding:60px 30px;border-radius:10px;box-shadow:0 5px 20px #0002}
+.error-page h1{font-size:80px;color:#dc3545;margin:0}.error-page h2{margin-top:0}
+
+@media(max-width:600px){
+.navbar{flex-direction:column;gap:15px}.nav-links{flex-wrap:wrap;justify-content:center}
+.container{width:94%;margin:25px auto}.profile-row{flex-direction:column;gap:5px}
+}

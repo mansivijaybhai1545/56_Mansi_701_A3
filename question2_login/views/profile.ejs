@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Profile</title><link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand">Express Login</div>
+  <div class="nav-links">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/profile">Profile</a>
+    <a href="/logout" class="logout-link">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="profile-card">
+    <h1>User Profile</h1>
+    <p class="subtitle">This is Protected Route 2.</p>
+
+    <div class="profile-row"><span>User ID</span><strong><%= user.id %></strong></div>
+    <div class="profile-row"><span>Username</span><strong><%= user.username %></strong></div>
+    <div class="profile-row"><span>Name</span><strong><%= user.name %></strong></div>
+    <div class="profile-row"><span>Email</span><strong><%= user.email %></strong></div>
+
+    <div class="actions">
+      <a href="/dashboard" class="btn">Back to Dashboard</a>
+      <a href="/logout" class="btn logout-btn">Logout</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

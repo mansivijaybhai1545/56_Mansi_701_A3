@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dashboard</title><link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand">Express Login</div>
+  <div class="nav-links">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/profile">Profile</a>
+    <a href="/logout" class="logout-link">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="welcome-card">
+    <h1>Welcome, <%= user.name %>!</h1>
+    <p>You have successfully logged in.</p>
+    <p>This is Protected Route 1.</p>
+  </div>
+
+  <div class="info-card">
+    <h2>Dashboard</h2>
+    <p>Username: <strong><%= user.username %></strong></p>
+    <p>Email: <strong><%= user.email %></strong></p>
+    <p>User ID: <strong><%= user.id %></strong></p>
+  </div>
+
+  <div class="actions">
+    <a href="/profile" class="btn">View Profile</a>
+    <a href="/logout" class="btn logout-btn">Logout</a>
+  </div>
+</div>
+
+</body>
+</html>
